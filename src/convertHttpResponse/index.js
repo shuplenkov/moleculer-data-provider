@@ -1,4 +1,4 @@
-import { GET_LIST, GET_MANY_REFERENCE, CREATE, DELETE_MANY } from "ra-core"
+import { GET_LIST, GET_MANY_REFERENCE, CREATE, DELETE_MANY, GET_MANY } from "ra-core"
 
 /**
  * @param {Object} response HTTP response from fetch()
@@ -12,6 +12,7 @@ const convertHTTPResponse = (response, type, resource, params) => {
   switch (type) {
     case GET_LIST:
     case GET_MANY_REFERENCE:
+    case GET_MANY:
       return {
         data: json.rows,
         total: json.total
