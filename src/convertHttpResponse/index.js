@@ -13,8 +13,8 @@ const convertHTTPResponse = (response, type, resource, params) => {
     case GET_LIST:
     case GET_MANY_REFERENCE:
       return {
-        data: json,
-        total: json.length
+        data: json.rows,
+        total: json.total
       }
     case CREATE:
       return { data: { ...params.data, id: json.id } }
